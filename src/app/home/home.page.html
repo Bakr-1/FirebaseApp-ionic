@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Parent list
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content fullscreen>
+    <ion-list lines="full" class="ion-no-margin">
+      <ion-item>
+        <ion-label position="floating">To Find</ion-label>
+        <ion-input [(ngModel)]="Object"></ion-input>
+      </ion-item>
+    </ion-list>
+    <section>
+      <ion-button *ngIf="!selectMode" expand="block" (click)="createobject()">Add to list</ion-button>
+      <ion-button *ngIf="selectMode" expand="block" (click)="updateobject()">Update list</ion-button>
+    </section>
+
+    <ion-card *ngFor="let item of Locallist" (click)="selectobject(item)">
+      <ion-card-header>
+        <ion-card-title>{{item.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" (click)="deleteobject(item.$key)">Delete</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

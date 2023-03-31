@@ -1,0 +1,7 @@
+{
+  "name": "FirebaseApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
